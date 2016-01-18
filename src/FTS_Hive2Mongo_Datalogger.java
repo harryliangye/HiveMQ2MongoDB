@@ -1,7 +1,6 @@
 /**
  * Created by yliang on 1/15/2016.
  */
-
 import java.util.*;
 public class FTS_Hive2Mongo_Datalogger
 {
@@ -10,7 +9,7 @@ public class FTS_Hive2Mongo_Datalogger
     private static String storageCollection;
     private static boolean DBConnected     = false;
     private static boolean HiveConnected   = false;
-    private static List <String> subsTopics = new LinkedList<String>() ;
+    private static List <String> subsTopics = new LinkedList<>() ;
     public static void main( String args[] )
     {
         String userCmd;
