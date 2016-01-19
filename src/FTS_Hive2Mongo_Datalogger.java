@@ -24,6 +24,7 @@ public class FTS_Hive2Mongo_Datalogger
             switch(userCmd)
             {
                 case "v":           dispIncomingMessages = !dispIncomingMessages;
+                                    System.out.println("Display incoming messages:"+ dispIncomingMessages);
                                     break;
 
                 case "help":        helpInfo();
