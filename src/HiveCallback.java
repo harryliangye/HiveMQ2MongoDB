@@ -24,8 +24,11 @@ public class HiveCallback implements MqttCallback
 
     public void messageArrived(String topic, MqttMessage message)
     {
-        System.out.println("topic arrived:"+topic);
-        System.out.println("With message:"+message);
+        if(FTS_Hive2Mongo_Datalogger.dispIncomingMessages)
+        {
+            System.out.println("topic arrived:" + topic);
+            System.out.println("With message:" + message);
+        }
         FTS_Hive2Mongo_Datalogger.dbInsert(topic, message.toString());
     }
 }

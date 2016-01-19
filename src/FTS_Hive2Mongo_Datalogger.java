@@ -8,6 +8,7 @@ public class FTS_Hive2Mongo_Datalogger
     private static HiveConnection hiveConnection;
     private static String storageCollection;
     private static List <String> subsTopics = new LinkedList<>() ;
+    public static boolean dispIncomingMessages = true;
     public static boolean DBConnected     = false;
     public static boolean HiveConnected   = false;
     public static void main( String args[] )
@@ -22,6 +23,9 @@ public class FTS_Hive2Mongo_Datalogger
             userCmd = terminalInput.nextLine();
             switch(userCmd)
             {
+                case "v":           dispIncomingMessages = !dispIncomingMessages;
+                                    break;
+
                 case "help":        helpInfo();
                                     break;
 

@@ -7,11 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c7162b0-aef1-4aee-a197-5ab84c1b163f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FTS_Hive2Mongo_Datalogger.java" afterPath="$PROJECT_DIR$/src/FTS_Hive2Mongo_Datalogger.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HiveCallback.java" afterPath="$PROJECT_DIR$/src/HiveCallback.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HiveConnection.java" afterPath="$PROJECT_DIR$/src/HiveConnection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MongoConnection.java" afterPath="$PROJECT_DIR$/src/MongoConnection.java" />
     </list>
     <ignored path="FTS_Hive2Mongo_Datalogger.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,8 +34,8 @@
       <file leaf-file-name="FTS_Hive2Mongo_Datalogger.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FTS_Hive2Mongo_Datalogger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.275862">
-              <caret line="215" column="9" selection-start-line="215" selection-start-column="9" selection-end-line="215" selection-end-column="9" />
+            <state vertical-scroll-proportion="-14.068966">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -50,7 +47,7 @@
         <entry file="file://$PROJECT_DIR$/src/HiveConnection.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+              <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -74,9 +71,11 @@
       <file leaf-file-name="HiveCallback.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/HiveCallback.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29310346">
-              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-              <folding />
+            <state vertical-scroll-proportion="0.5636605">
+              <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -101,10 +100,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/HiveCallback.java" />
         <option value="$PROJECT_DIR$/src/MongoConnection.java" />
         <option value="$PROJECT_DIR$/src/HiveConnection.java" />
         <option value="$PROJECT_DIR$/src/FTS_Hive2Mongo_Datalogger.java" />
+        <option value="$PROJECT_DIR$/src/HiveCallback.java" />
       </list>
     </option>
   </component>
@@ -663,12 +662,12 @@
       <workItem from="1453137829654" duration="9673000" />
       <workItem from="1453149604556" duration="1960000" />
       <workItem from="1453155646793" duration="8097000" />
-      <workItem from="1453229627192" duration="10931000" />
+      <workItem from="1453229627192" duration="12917000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49824000" />
+    <option name="totallyTimeSpent" value="51810000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -680,7 +679,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -765,7 +764,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -804,7 +805,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -864,7 +867,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -903,7 +908,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -962,7 +969,7 @@
     <entry file="file://$PROJECT_DIR$/src/HiveConnection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -972,8 +979,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FTS_Hive2Mongo_Datalogger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.275862">
-          <caret line="215" column="9" selection-start-line="215" selection-start-column="9" selection-end-line="215" selection-end-column="9" />
+        <state vertical-scroll-proportion="-14.068966">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -982,9 +989,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/HiveCallback.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29310346">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding />
+        <state vertical-scroll-proportion="0.5636605">
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
