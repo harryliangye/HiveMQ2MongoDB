@@ -41,10 +41,12 @@ public class MongoConnection
             DBObject doc = new BasicDBObject("name",USER_NAME).append("server",SERVER);
             this.coll.insert(doc);
             System.out.println("Connected!");
+            FTS_Hive2Mongo_Datalogger.DBConnected = true;
             return 0;
         }
         catch(Exception e)
         {
+            FTS_Hive2Mongo_Datalogger.DBConnected = false;
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
             return -1;
         }
@@ -58,10 +60,12 @@ public class MongoConnection
             System.out.println("DB Host: " + SERVER);
             System.out.println("Database:" + TARGET_DB);
             System.out.println("Username:" + USER_NAME);
+            FTS_Hive2Mongo_Datalogger.DBConnected = true;
             return true;
         }
         catch(Exception e)
         {
+            FTS_Hive2Mongo_Datalogger.DBConnected = false;
             System.out.println(e);
             System.out.println("Database Not Connected!");
             return false;

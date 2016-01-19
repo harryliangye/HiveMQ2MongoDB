@@ -7,9 +7,9 @@ public class FTS_Hive2Mongo_Datalogger
     private static MongoConnection mongoConnection;
     private static HiveConnection hiveConnection;
     private static String storageCollection;
-    private static boolean DBConnected     = false;
-    private static boolean HiveConnected   = false;
     private static List <String> subsTopics = new LinkedList<>() ;
+    public static boolean DBConnected     = false;
+    public static boolean HiveConnected   = false;
     public static void main( String args[] )
     {
         String userCmd;
@@ -31,22 +31,19 @@ public class FTS_Hive2Mongo_Datalogger
                 case "sub":         subscribe();
                                     break;
 
-                case "uns":         unsubscribe();
+                case "uns":         unSubscribe();
                                     break;
 
                 case "condb":       startDBConnection();
                                     break;
 
                 case "conbroker":   startBrokerConnection();
-                                    HiveConnected = true;
                                     break;
 
                 case "discbroker":  disconnectBroker();
-                                    HiveConnected = false;
                                     break;
 
                 case "recbroker":   reconnectBroker();
-                                    HiveConnected = true;
                                     break;
 
                 case "recdb":       reconnectDB();
@@ -139,7 +136,7 @@ public class FTS_Hive2Mongo_Datalogger
         }
     }
 
-    public static void unsubscribe()
+    public static void unSubscribe()
     {
         String topic;
         if(!HiveConnected)
@@ -150,7 +147,7 @@ public class FTS_Hive2Mongo_Datalogger
         Scanner terminalInput   = new Scanner(System.in);
         System.out.println("topic name: ");
         topic = terminalInput.nextLine();
-        if(hiveConnection.unsubscribe(topic) == 0)
+        if(hiveConnection.unSubscribe(topic) == 0)
         {
             subsTopics.remove(topic);
         }
@@ -165,9 +162,14 @@ public class FTS_Hive2Mongo_Datalogger
     {
         String userCmd;
         Scanner terminalInput   = new Scanner(System.in);
+        if(!DBConnected)
+        {
+            System.out.println("Please use \"condb\"");
+            return;
+        }
         System.out.println("Change storage collection?");
         userCmd = terminalInput.nextLine();
-        if(userCmd == "y" | userCmd == "Y")
+        if(userCmd.equals("y") | userCmd.equals("Y"))
         {
             System.out.println("target collection: ");
             storageCollection = terminalInput.nextLine();

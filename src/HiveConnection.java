@@ -37,10 +37,12 @@ public class HiveConnection
             System.out.println("setting call back");
             dataLoggerClient.setCallback(callBack);
             System.out.println("setting successful!");
+            FTS_Hive2Mongo_Datalogger.HiveConnected = true;
             return 0;
         }
         catch (MqttException e)
         {
+            FTS_Hive2Mongo_Datalogger.HiveConnected = false;
             hiveExceptionHandling(e);
             return -1;
         }
@@ -52,6 +54,7 @@ public class HiveConnection
         {
             System.out.println("Disconnecting to broker: "+BROKER);
             dataLoggerClient.disconnect();
+            FTS_Hive2Mongo_Datalogger.HiveConnected = false;
             System.out.println("Disconnected !");
             return 0;
         }
@@ -77,7 +80,7 @@ public class HiveConnection
         }
     }
 
-    public int unsubscribe(String topic)
+    public int unSubscribe(String topic)
     {
         try
         {
@@ -103,7 +106,7 @@ public class HiveConnection
         return 0;
     }
 
-    public void hiveExceptionHandling(MqttException e)
+    private void hiveExceptionHandling(MqttException e)
     {
         System.out.println("reason "+e.getReasonCode());
         System.out.println("msg "+e.getMessage());

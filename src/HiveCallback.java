@@ -10,6 +10,7 @@ public class HiveCallback implements MqttCallback
 {
     public void connectionLost(Throwable e)
     {
+        FTS_Hive2Mongo_Datalogger.HiveConnected = false;
         System.err.println(e + "Need to reconnect?");
     }
 
