@@ -1,5 +1,6 @@
 /**
  * Created by yliang on 1/15/2016.
+ *
  */
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
@@ -7,16 +8,16 @@ public class HiveConnection
 {
     public MqttConnectOptions connOpts;
     public MemoryPersistence memoPersis;
-    private String BROKER;
-    private String CLIENT_ID;
+    private String _brokerAddress;
+    private String _clientId;
     private MqttClient dataLoggerClient;
 
     public HiveConnection(String hiveBroker, String clientId, boolean cleanSession)
     {
+        _brokerAddress = hiveBroker;
+        _clientId = clientId;
         connOpts = new MqttConnectOptions();
         memoPersis = new MemoryPersistence();
-        BROKER = hiveBroker;
-        CLIENT_ID = clientId;
         connOpts.setCleanSession(cleanSession);
     }
 
@@ -30,19 +31,17 @@ public class HiveConnection
         try
         {
             HiveCallback callBack = new HiveCallback();
-            dataLoggerClient = new MqttClient("tcp://" + BROKER, CLIENT_ID, memoPersis);
-            System.out.println("Connecting to broker: "+BROKER);
+            dataLoggerClient = new MqttClient("tcp://" + _brokerAddress, _clientId, memoPersis);
+            System.out.println("Connecting to broker: "+ _brokerAddress);
             dataLoggerClient.connect(connOpts);
             System.out.println("Connected !");
             System.out.println("setting call back");
             dataLoggerClient.setCallback(callBack);
             System.out.println("setting successful!");
-            FTS_Hive2Mongo_Datalogger.HiveConnected = true;
             return 0;
         }
         catch (MqttException e)
         {
-            FTS_Hive2Mongo_Datalogger.HiveConnected = false;
             hiveExceptionHandling(e);
             return -1;
         }
@@ -52,9 +51,8 @@ public class HiveConnection
     {
         try
         {
-            System.out.println("Disconnecting to broker: "+BROKER);
+            System.out.println("Disconnecting to broker: "+ _brokerAddress);
             dataLoggerClient.disconnect();
-            FTS_Hive2Mongo_Datalogger.HiveConnected = false;
             System.out.println("Disconnected !");
             return 0;
         }
@@ -73,9 +71,13 @@ public class HiveConnection
             System.out.println("Subscribed: "+topic+" Successfully !");
             return 0;
         }
-        catch (MqttException e)
+        catch (Exception e)
         {
-            hiveExceptionHandling(e);
+            System.out.println("msg "+e.getMessage());
+            System.out.println("loc "+e.getLocalizedMessage());
+            System.out.println("cause "+e.getCause());
+            System.out.println("excep "+e);
+            e.printStackTrace();
             return -1;
         }
     }
@@ -94,16 +96,14 @@ public class HiveConnection
             return -1;
         }
     }
-    public int setBroker(String tcp) throws Exception
+    public void setBrokerAddress(String tcp)
     {
-        BROKER = tcp;
-        return 0;
+        _brokerAddress = tcp;
     }
 
-    public int setClientId(String newId) throws  Exception
+    public void setClientId(String newId)
     {
-        CLIENT_ID = newId;
-        return 0;
+        _clientId = newId;
     }
 
     private void hiveExceptionHandling(MqttException e)

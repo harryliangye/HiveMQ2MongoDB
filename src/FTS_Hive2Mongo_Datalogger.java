@@ -5,14 +5,12 @@
 import java.util.*;
 public class FTS_Hive2Mongo_Datalogger
 {
-    private static MongoConnection mongoConnection;
-    private static HiveConnection hiveConnection;
-    private static String storageCollection;
+    private static MongoConnection dbConnection;
+    private static HiveConnection brokerConnection;
+    private static String targetCollectionName;
     private static List <String> subsTopics = new LinkedList<>() ;
     public static boolean dispIncomingMessages = true;
-    public static boolean DBConnected     = false;
-    public static boolean HiveConnected   = false;
-    
+
     public static void main( String args[] )
     {
         String userCmd;
@@ -41,13 +39,13 @@ public class FTS_Hive2Mongo_Datalogger
                 case "uns":         unSubscribe();
                                     break;
 
-                case "condb":       startDBConnection();
+                case "condb":       connectToDatabase();
                                     break;
 
-                case "conbroker":   startBrokerConnection();
+                case "conbroker":   connectToBroker();
                                     break;
 
-                case "discbroker":  disconnectBroker();
+                case "discbroker":  brokerConnection.disConnect();
                                     break;
 
                 case "recbroker":   reconnectBroker();
@@ -56,7 +54,7 @@ public class FTS_Hive2Mongo_Datalogger
                 case "recdb":       reconnectDB();
                                     break;
 
-                case "coninf":      connInfo();
+                case "check ":      checkConnection();
                                     break;
 
                 case "exit":        System.out.println("Bye");
@@ -78,14 +76,14 @@ public class FTS_Hive2Mongo_Datalogger
         System.out.print("recbroker             : Reconnect to broker\n\n");
         System.out.print("sub                   : Subscribe a new topic\n\n");
         System.out.print("uns                   : Un-subscribe a subscribed topic\n\n");
-        System.out.print("coninf                : Show connection information\n\n");
+        System.out.print("check                 : Check connection status\n\n");
         System.out.print("showtopic             : Print currently subscribed topics\n\n");
         System.out.print("exit                  : to exit\n\n");
     }
-    public static void startBrokerConnection()
+    public static void connectToBroker()
     {
         String serverAdd, clientID;
-        if(!DBConnected)
+        if(!dbConnection.isDBConnected)
         {
             System.out.println("Database connection required");
             return;
@@ -96,11 +94,11 @@ public class FTS_Hive2Mongo_Datalogger
         System.out.println("clientID: ");
         clientID = terminalInput.nextLine();
 
-        hiveConnection = new HiveConnection(serverAdd, clientID, true);//session cleaning is true by default
-        hiveConnection.connect();
+        brokerConnection = new HiveConnection(serverAdd, clientID, true);//session cleaning is true by default
+        brokerConnection.connect();
     }
 
-    public static void startDBConnection()
+    public static void connectToDatabase()
     {
         String serverAdd, userName, password, targetDB;
         Scanner terminalInput   = new Scanner(System.in);
@@ -109,17 +107,14 @@ public class FTS_Hive2Mongo_Datalogger
         System.out.println("target database: ");
         targetDB = terminalInput.nextLine();
         System.out.println("target collection: ");
-        storageCollection = terminalInput.nextLine();
+        targetCollectionName = terminalInput.nextLine();
         System.out.println("user: ");
         userName = terminalInput.nextLine();
         System.out.println("password: ");
         password = terminalInput.nextLine();
 
-        mongoConnection = new MongoConnection(serverAdd, userName, password, targetDB);
-        if(mongoConnection.connect() == 0)
-        {
-            DBConnected = true;
-        }
+        dbConnection = new MongoConnection(serverAdd, userName, password, targetDB);
+        dbConnection.connect();
     }
 
     public static void showSubscriptions()
@@ -130,7 +125,7 @@ public class FTS_Hive2Mongo_Datalogger
     public static void subscribe()
     {
         String topic;
-        if(!HiveConnected)
+        if(!brokerConnection.isConnected())
         {
             System.out.println("Broker not connected!");
             return;
@@ -138,7 +133,7 @@ public class FTS_Hive2Mongo_Datalogger
         Scanner terminalInput   = new Scanner(System.in);
         System.out.println("new topic name: ");
         topic = terminalInput.nextLine();
-        if(hiveConnection.subscribe(topic) == 0)
+        if(brokerConnection.subscribe(topic) == 0)
         {
             subsTopics.add(topic);
         }
@@ -147,7 +142,7 @@ public class FTS_Hive2Mongo_Datalogger
     public static void unSubscribe()
     {
         String topic;
-        if(!HiveConnected)
+        if(!brokerConnection.isConnected())
         {
             System.out.println("Broker not connected!");
             return;
@@ -155,22 +150,17 @@ public class FTS_Hive2Mongo_Datalogger
         Scanner terminalInput   = new Scanner(System.in);
         System.out.println("topic name: ");
         topic = terminalInput.nextLine();
-        if(hiveConnection.unSubscribe(topic) == 0)
+        if(brokerConnection.unSubscribe(topic) == 0)
         {
             subsTopics.remove(topic);
         }
-    }
-
-    public static void disconnectBroker()
-    {
-        hiveConnection.disConnect();
     }
 
     public static void reconnectDB()
     {
         String userCmd;
         Scanner terminalInput   = new Scanner(System.in);
-        if(!DBConnected)
+        if(!dbConnection.isDBConnected)
         {
             System.out.println("Please use \"condb\"");
             return;
@@ -180,18 +170,16 @@ public class FTS_Hive2Mongo_Datalogger
         if(userCmd.equals("y") | userCmd.equals("Y"))
         {
             System.out.println("target collection: ");
-            storageCollection = terminalInput.nextLine();
+            targetCollectionName = terminalInput.nextLine();
         }
-        if(mongoConnection.connect() == 0)
-        {
-            DBConnected = true;
-        }
+
+        dbConnection.connect();
     }
 
     public static void reconnectBroker()
     {
         String serverAdd, clientID;
-        if(!DBConnected)
+        if(!dbConnection.isDBConnected)
         {
             System.out.println("Database connection required");
             return;
@@ -201,40 +189,30 @@ public class FTS_Hive2Mongo_Datalogger
         serverAdd = terminalInput.nextLine();
         System.out.println("clientID: ");
         clientID = terminalInput.nextLine();
-        try
-        {
-            hiveConnection.setBroker(serverAdd);
-            hiveConnection.setClientId(clientID);
-            hiveConnection.connect();
-        }
-        catch(Exception e)
-        {
-            System.out.println("Msg:" + e.getMessage());
-            System.out.println("Cause:" + e.getCause());
-        }
+        brokerConnection.setBrokerAddress(serverAdd);
+        brokerConnection.setClientId(clientID);
+        brokerConnection.connect();
 
     }
 
-    public static void connInfo()
+    public static void checkConnection()
     {
-        if(HiveConnected)System.out.println("Broker Connection: " + hiveConnection.isConnected());
-        else
+
+        System.out.println(brokerConnection.isConnected() ? "Broker Connection: " + brokerConnection.isConnected() : "Broker is not connected!");
+
+        if(dbConnection.isDBConnected)
         {
-            System.out.println("Broker not connected!");
-        }
-        if(DBConnected)
-        {
-            System.out.println("Current storage collection: "+storageCollection);
-            DBConnected = mongoConnection.checkConnection();
+            System.out.println("Current storage collection: "+ targetCollectionName);
+            dbConnection.checkConnection();
         }
         else
         {
-            System.out.println("Database Not Connected!");
+            System.out.println("Database not connected!");
         }
     }
 
-    public static void dbInsert(String topic, String message)
+    public static void dbInsertFromCallBack(String topic, String message)
     {
-        mongoConnection.insert(topic, message, storageCollection);
+        dbConnection.insert(topic, message, targetCollectionName);
     }
 }

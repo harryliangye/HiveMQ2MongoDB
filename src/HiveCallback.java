@@ -1,5 +1,6 @@
 /**
  * Created by yliang on 1/15/2016.
+ *
  */
 
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
@@ -10,7 +11,6 @@ public class HiveCallback implements MqttCallback
 {
     public void connectionLost(Throwable e)
     {
-        FTS_Hive2Mongo_Datalogger.HiveConnected = false;
         System.err.println(e + "Need to reconnect?");
     }
 
@@ -29,6 +29,6 @@ public class HiveCallback implements MqttCallback
             System.out.println("topic arrived:" + topic);
             System.out.println("With message:" + message);
         }
-        FTS_Hive2Mongo_Datalogger.dbInsert(topic, message.toString());
+        FTS_Hive2Mongo_Datalogger.dbInsertFromCallBack(topic, message.toString());
     }
 }

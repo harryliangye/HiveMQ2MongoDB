@@ -1,83 +1,83 @@
 /**
  * Created by yliang on 1/15/2016.
+ *
  */
 import com.mongodb.*;
 
 import java.util.Arrays;
 public class MongoConnection
 {
-    private String SERVER;
-    private String USER_NAME;
-    private String PASSWORD;
-    private String TARGET_DB;
-    private MongoCredential credential;
-    private MongoClient mongoClient;
-    private DB db;
-    private DBCollection coll;
+    private DB _db;
+    private DBCollection _coll;
+    private String _server;
+    private String _username;
+    private String _password;
+    private String _targetDB;
+    public boolean isDBConnected;
 
     public MongoConnection(String serverAddress, String userName, String password, String targetDB)
     {
-        SERVER      = serverAddress;
-        USER_NAME   = userName;
-        PASSWORD    = password;
-        TARGET_DB   = targetDB;
+        _server         = serverAddress;
+        _username       = userName;
+        _password       = password;
+        _targetDB       = targetDB;
+        isDBConnected   = false;
     }
 
     public int connect()
     {
         try
         {
+            DBObject loginInfo = new BasicDBObject("name",_username).append("server",_server);
+
             System.out.println("Setting Credential...");
-            credential  = MongoCredential.createCredential(USER_NAME, "admin", PASSWORD.toCharArray());
+            MongoCredential credential  = MongoCredential.createCredential(_username, "admin", _password.toCharArray());
             System.out.println("Credential File Creation Success!");
 
             System.out.println("Setting Connection Address...");
-            mongoClient = new MongoClient(new ServerAddress(SERVER), Arrays.asList(credential));
+            MongoClient mongoClient = new MongoClient(new ServerAddress(_server), Arrays.asList(credential));
             System.out.println("Set!");
 
             System.out.println("Connecting...");
-            this.db =  mongoClient.getDB(TARGET_DB);
-            this.coll = this.db.getCollection("login_records");
-            DBObject doc = new BasicDBObject("name",USER_NAME).append("server",SERVER);
-            this.coll.insert(doc);
+            _db =  mongoClient.getDB(_targetDB);
+            _coll = _db.getCollection("login_records");
+            _coll.insert(loginInfo);
             System.out.println("Connected!");
-            FTS_Hive2Mongo_Datalogger.DBConnected = true;
+            isDBConnected = true;
             return 0;
         }
         catch(Exception e)
         {
-            FTS_Hive2Mongo_Datalogger.DBConnected = false;
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            isDBConnected = false;
             return -1;
         }
     }
 
-    public boolean checkConnection()
+    public void checkConnection()
     {
         try
         {
             this.insert("Connection Check", "Checked", "login_records");
-            System.out.println("DB Host: " + SERVER);
-            System.out.println("Database:" + TARGET_DB);
-            System.out.println("Username:" + USER_NAME);
-            FTS_Hive2Mongo_Datalogger.DBConnected = true;
-            return true;
+            System.out.println("DB Host: " + _server);
+            System.out.println("Database:" + _targetDB);
+            System.out.println("Username:" + _username);
+            isDBConnected =  true;
         }
         catch(Exception e)
         {
-            FTS_Hive2Mongo_Datalogger.DBConnected = false;
-            System.out.println(e);
+            System.out.println("Exception:" + e);
             System.out.println("Database Not Connected!");
-            return false;
+            isDBConnected =  false;
         }
 
     }
 
     public void insert(String topic, String message, String collection)
     {
-        this.coll = this.db.getCollection(collection);//just like a table
+        _coll = _db.getCollection(collection);//just like a table
         DBObject doc = new BasicDBObject("name",topic)
                 .append("message",message);
-        this.coll.insert(doc);
+        _coll.insert(doc);
     }
 }
