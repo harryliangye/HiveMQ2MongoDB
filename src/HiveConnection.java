@@ -2,8 +2,12 @@
  * Created by yliang on 1/15/2016.
  *
  */
+import com.sun.istack.internal.NotNull;
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
+
+import javax.lang.model.type.NullType;
+
 public class HiveConnection
 {
     public MqttConnectOptions connOpts;
@@ -22,6 +26,7 @@ public class HiveConnection
 
     public boolean isConnected()
     {
+        if(_dataLoggerClient == null)return false;
         return _dataLoggerClient.isConnected();
     }
 
