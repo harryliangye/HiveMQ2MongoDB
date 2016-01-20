@@ -18,7 +18,7 @@ public class FTS_Hive2Mongo_Datalogger
         Scanner terminalInput   = new Scanner(System.in);
         brokerConnection = new HiveConnection();//session cleaning is true by default
         dbConnection = new MongoConnection();
-        System.out.println("FTS HiveMQ Broker --> MongoDB Data Logger v1.0");
+        System.out.println("FTS HiveMQ Broker --> MongoDB Data Logger v2.0");
         System.out.println("Type \"help\" for command list");
         while(true)
         {

@@ -52,19 +52,19 @@ public class HiveConnection
         }
     }
 
-    public int disConnect()
+    public void disConnect()
     {
-        try
+        if (isConnected())
         {
-            System.out.println("Disconnecting to broker: "+ _brokerAddress);
-            _dataLoggerClient.disconnect();
-            System.out.println("Disconnected !");
-            return 0;
-        }
-        catch (MqttException e)
-        {
-            hiveExceptionHandling(e);
-            return -1;
+            try
+            {
+                System.out.println("Disconnecting to broker: " + _brokerAddress);
+                _dataLoggerClient.disconnect();
+                System.out.println("Disconnected !");
+            } catch (MqttException e)
+            {
+                hiveExceptionHandling(e);
+            }
         }
     }
 
