@@ -7,10 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c7162b0-aef1-4aee-a197-5ab84c1b163f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FTS_Hive2Mongo_Datalogger.java" afterPath="$PROJECT_DIR$/src/FTS_Hive2Mongo_Datalogger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HiveCallback.java" afterPath="$PROJECT_DIR$/src/HiveCallback.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HiveConnection.java" afterPath="$PROJECT_DIR$/src/HiveConnection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MongoConnection.java" afterPath="$PROJECT_DIR$/src/MongoConnection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FTS_Hive2Mongo_Datalogger.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,30 +30,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FTS_Hive2Mongo_Datalogger.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FTS_Hive2Mongo_Datalogger.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FTS_Hive2Mongo_Datalogger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.618777">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="137" column="41" selection-start-line="137" selection-start-column="41" selection-end-line="137" selection-end-column="41" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
+                <element signature="method#checkConnection#0;class#FTS_Hive2Mongo_Datalogger#0" expanded="false" />
+                <element signature="method#dbInsertFromCallBack#0;class#FTS_Hive2Mongo_Datalogger#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HiveConnection.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HiveConnection.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/HiveConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="61" column="22" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.96937215">
+              <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <element signature="e#2769#2770#0" expanded="true" />
-                <element signature="e#2805#2806#0" expanded="true" />
-                <element signature="e#2854#2855#0" expanded="true" />
-                <element signature="e#2887#2888#0" expanded="true" />
+                <element signature="method#hiveExceptionHandling#0;class#HiveConnection#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -66,10 +62,13 @@
         <entry file="file://$PROJECT_DIR$/src/MongoConnection.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
+                <element signature="e#363#364#0" expanded="true" />
+                <element signature="e#402#403#0" expanded="true" />
+                <element signature="method#insert#0;class#MongoConnection#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -79,10 +78,9 @@
         <entry file="file://$PROJECT_DIR$/src/HiveCallback.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+              <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="imports" expanded="true" />
                 <element signature="e#309#310#0" expanded="true" />
                 <element signature="e#369#370#0" expanded="true" />
               </folding>
@@ -110,9 +108,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/HiveCallback.java" />
         <option value="$PROJECT_DIR$/src/MongoConnection.java" />
         <option value="$PROJECT_DIR$/src/FTS_Hive2Mongo_Datalogger.java" />
-        <option value="$PROJECT_DIR$/src/HiveCallback.java" />
         <option value="$PROJECT_DIR$/src/HiveConnection.java" />
       </list>
     </option>
@@ -673,6 +671,7 @@
       <workItem from="1453149604556" duration="1960000" />
       <workItem from="1453155646793" duration="8097000" />
       <workItem from="1453229627192" duration="13834000" />
+      <workItem from="1453310455175" duration="17464000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commission">
       <created>1453314278326</created>
@@ -684,6 +683,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="70191000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -696,7 +696,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32987553" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -705,12 +705,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32987553" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15303983" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26298702" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18549223" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09914712" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20887446" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20887446" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -740,7 +740,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -755,6 +755,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="method#checkConnection#0;class#FTS_Hive2Mongo_Datalogger#0" expanded="false" />
+            <element signature="method#dbInsertFromCallBack#0;class#FTS_Hive2Mongo_Datalogger#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -766,10 +768,7 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#2769#2770#0" expanded="true" />
-            <element signature="e#2805#2806#0" expanded="true" />
-            <element signature="e#2854#2855#0" expanded="true" />
-            <element signature="e#2887#2888#0" expanded="true" />
+            <element signature="method#hiveExceptionHandling#0;class#HiveConnection#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -781,6 +780,9 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#363#364#0" expanded="true" />
+            <element signature="e#402#403#0" expanded="true" />
+            <element signature="method#insert#0;class#MongoConnection#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -791,7 +793,6 @@
           <caret line="20" column="56" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
             <element signature="e#309#310#0" expanded="true" />
             <element signature="e#369#370#0" expanded="true" />
           </folding>
@@ -804,6 +805,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="method#checkConnection#0;class#FTS_Hive2Mongo_Datalogger#0" expanded="false" />
+            <element signature="method#dbInsertFromCallBack#0;class#FTS_Hive2Mongo_Datalogger#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -815,10 +818,7 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#2769#2770#0" expanded="true" />
-            <element signature="e#2805#2806#0" expanded="true" />
-            <element signature="e#2854#2855#0" expanded="true" />
-            <element signature="e#2887#2888#0" expanded="true" />
+            <element signature="method#hiveExceptionHandling#0;class#HiveConnection#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -830,6 +830,9 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#363#364#0" expanded="true" />
+            <element signature="e#402#403#0" expanded="true" />
+            <element signature="method#insert#0;class#MongoConnection#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -840,7 +843,6 @@
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
             <element signature="e#309#310#0" expanded="true" />
             <element signature="e#369#370#0" expanded="true" />
           </folding>
@@ -853,6 +855,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="method#checkConnection#0;class#FTS_Hive2Mongo_Datalogger#0" expanded="false" />
+            <element signature="method#dbInsertFromCallBack#0;class#FTS_Hive2Mongo_Datalogger#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -864,10 +868,7 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#2769#2770#0" expanded="true" />
-            <element signature="e#2805#2806#0" expanded="true" />
-            <element signature="e#2854#2855#0" expanded="true" />
-            <element signature="e#2887#2888#0" expanded="true" />
+            <element signature="method#hiveExceptionHandling#0;class#HiveConnection#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -879,6 +880,9 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#363#364#0" expanded="true" />
+            <element signature="e#402#403#0" expanded="true" />
+            <element signature="method#insert#0;class#MongoConnection#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -889,7 +893,6 @@
           <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
             <element signature="e#309#310#0" expanded="true" />
             <element signature="e#369#370#0" expanded="true" />
           </folding>
@@ -902,6 +905,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="method#checkConnection#0;class#FTS_Hive2Mongo_Datalogger#0" expanded="false" />
+            <element signature="method#dbInsertFromCallBack#0;class#FTS_Hive2Mongo_Datalogger#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -913,10 +918,7 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#2769#2770#0" expanded="true" />
-            <element signature="e#2805#2806#0" expanded="true" />
-            <element signature="e#2854#2855#0" expanded="true" />
-            <element signature="e#2887#2888#0" expanded="true" />
+            <element signature="method#hiveExceptionHandling#0;class#HiveConnection#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -927,6 +929,8 @@
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="method#checkConnection#0;class#FTS_Hive2Mongo_Datalogger#0" expanded="false" />
+            <element signature="method#dbInsertFromCallBack#0;class#FTS_Hive2Mongo_Datalogger#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -938,10 +942,7 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#2769#2770#0" expanded="true" />
-            <element signature="e#2805#2806#0" expanded="true" />
-            <element signature="e#2854#2855#0" expanded="true" />
-            <element signature="e#2887#2888#0" expanded="true" />
+            <element signature="method#hiveExceptionHandling#0;class#HiveConnection#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -953,6 +954,9 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#363#364#0" expanded="true" />
+            <element signature="e#402#403#0" expanded="true" />
+            <element signature="method#insert#0;class#MongoConnection#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -963,7 +967,6 @@
           <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
             <element signature="e#309#310#0" expanded="true" />
             <element signature="e#369#370#0" expanded="true" />
           </folding>
@@ -976,6 +979,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="method#checkConnection#0;class#FTS_Hive2Mongo_Datalogger#0" expanded="false" />
+            <element signature="method#dbInsertFromCallBack#0;class#FTS_Hive2Mongo_Datalogger#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -987,10 +992,7 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#2769#2770#0" expanded="true" />
-            <element signature="e#2805#2806#0" expanded="true" />
-            <element signature="e#2854#2855#0" expanded="true" />
-            <element signature="e#2887#2888#0" expanded="true" />
+            <element signature="method#hiveExceptionHandling#0;class#HiveConnection#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1002,6 +1004,9 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#363#364#0" expanded="true" />
+            <element signature="e#402#403#0" expanded="true" />
+            <element signature="method#insert#0;class#MongoConnection#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1012,7 +1017,6 @@
           <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
             <element signature="e#309#310#0" expanded="true" />
             <element signature="e#369#370#0" expanded="true" />
           </folding>
@@ -1080,51 +1084,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HiveCallback.java">
+    <entry file="file://$PROJECT_DIR$/src/MongoConnection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#363#364#0" expanded="true" />
+            <element signature="e#402#403#0" expanded="true" />
+            <element signature="method#insert#0;class#MongoConnection#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HiveCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
             <element signature="e#309#310#0" expanded="true" />
             <element signature="e#369#370#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MongoConnection.java">
+    <entry file="file://$PROJECT_DIR$/src/FTS_Hive2Mongo_Datalogger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+          <caret line="137" column="41" selection-start-line="137" selection-start-column="41" selection-end-line="137" selection-end-column="41" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
+            <element signature="method#checkConnection#0;class#FTS_Hive2Mongo_Datalogger#0" expanded="false" />
+            <element signature="method#dbInsertFromCallBack#0;class#FTS_Hive2Mongo_Datalogger#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/HiveConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="22" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.96937215">
+          <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#2769#2770#0" expanded="true" />
-            <element signature="e#2805#2806#0" expanded="true" />
-            <element signature="e#2854#2855#0" expanded="true" />
-            <element signature="e#2887#2888#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FTS_Hive2Mongo_Datalogger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.618777">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="method#hiveExceptionHandling#0;class#HiveConnection#0" expanded="false" />
           </folding>
         </state>
       </provider>
