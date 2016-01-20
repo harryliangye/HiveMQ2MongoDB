@@ -161,7 +161,7 @@ public class FTS_Hive2Mongo_Datalogger
         }
         else
         {
-            System.out.println("Database not connected!");
+            System.out.println("Database is not connected!");
         }
     }
 
