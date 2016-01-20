@@ -15,21 +15,21 @@ public class MongoConnection
     private String _targetDB;
     public boolean isDBConnected;
 
-    public MongoConnection(String serverAddress, String userName, String password, String targetDB)
+    public MongoConnection()
     {
-        _server         = serverAddress;
-        _username       = userName;
-        _password       = password;
-        _targetDB       = targetDB;
         isDBConnected   = false;
     }
 
-    public int connect()
+    public int connect(String serverAddress, String userName, String password, String targetDB)
     {
         try
         {
-            DBObject loginInfo = new BasicDBObject("name",_username).append("server",_server);
+            _server         = serverAddress;
+            _username       = userName;
+            _password       = password;
+            _targetDB       = targetDB;
 
+            DBObject loginInfo = new BasicDBObject("name",_username).append("server",_server);
             System.out.println("Setting Credential...");
             MongoCredential credential  = MongoCredential.createCredential(_username, "admin", _password.toCharArray());
             System.out.println("Credential File Creation Success!");
@@ -53,6 +53,7 @@ public class MongoConnection
             return -1;
         }
     }
+
 
     public void checkConnection()
     {

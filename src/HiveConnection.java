@@ -10,33 +10,35 @@ public class HiveConnection
     public MemoryPersistence memoPersis;
     private String _brokerAddress;
     private String _clientId;
-    private MqttClient dataLoggerClient;
+    private MqttClient _dataLoggerClient;
+    private HiveCallback _callBack;
 
-    public HiveConnection(String hiveBroker, String clientId, boolean cleanSession)
+    public HiveConnection()
     {
-        _brokerAddress = hiveBroker;
-        _clientId = clientId;
         connOpts = new MqttConnectOptions();
         memoPersis = new MemoryPersistence();
-        connOpts.setCleanSession(cleanSession);
+        _callBack = new HiveCallback();
     }
 
     public boolean isConnected()
     {
-        return dataLoggerClient.isConnected();
+        return _dataLoggerClient.isConnected();
     }
 
-    public int connect()
+    public int connect(String hiveBroker, String clientId, boolean cleanSession)
     {
         try
         {
-            HiveCallback callBack = new HiveCallback();
-            dataLoggerClient = new MqttClient("tcp://" + _brokerAddress, _clientId, memoPersis);
+            _brokerAddress = hiveBroker;
+            _clientId = clientId;
+            connOpts.setCleanSession(cleanSession);
+
+            _dataLoggerClient = new MqttClient("tcp://" + _brokerAddress, _clientId, memoPersis);
             System.out.println("Connecting to broker: "+ _brokerAddress);
-            dataLoggerClient.connect(connOpts);
+            _dataLoggerClient.connect(connOpts);
             System.out.println("Connected !");
             System.out.println("setting call back");
-            dataLoggerClient.setCallback(callBack);
+            _dataLoggerClient.setCallback(_callBack);
             System.out.println("setting successful!");
             return 0;
         }
@@ -52,7 +54,7 @@ public class HiveConnection
         try
         {
             System.out.println("Disconnecting to broker: "+ _brokerAddress);
-            dataLoggerClient.disconnect();
+            _dataLoggerClient.disconnect();
             System.out.println("Disconnected !");
             return 0;
         }
@@ -67,7 +69,7 @@ public class HiveConnection
     {
         try
         {
-            dataLoggerClient.subscribe(topic);
+            _dataLoggerClient.subscribe(topic);
             System.out.println("Subscribed: "+topic+" Successfully !");
             return 0;
         }
@@ -86,7 +88,7 @@ public class HiveConnection
     {
         try
         {
-            dataLoggerClient.unsubscribe(topic);
+            _dataLoggerClient.unsubscribe(topic);
             System.out.println("Unubscribed: "+topic+" Successfully !");
             return 0;
         }
@@ -96,16 +98,6 @@ public class HiveConnection
             return -1;
         }
     }
-    public void setBrokerAddress(String tcp)
-    {
-        _brokerAddress = tcp;
-    }
-
-    public void setClientId(String newId)
-    {
-        _clientId = newId;
-    }
-
     private void hiveExceptionHandling(MqttException e)
     {
         System.out.println("reason "+e.getReasonCode());

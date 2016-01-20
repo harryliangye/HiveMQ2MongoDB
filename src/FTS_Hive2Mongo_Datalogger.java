@@ -11,10 +11,13 @@ public class FTS_Hive2Mongo_Datalogger
     private static List <String> subsTopics = new LinkedList<>() ;
     public static boolean dispIncomingMessages = true;
 
+
     public static void main( String args[] )
     {
         String userCmd;
         Scanner terminalInput   = new Scanner(System.in);
+        brokerConnection = new HiveConnection();//session cleaning is true by default
+        dbConnection = new MongoConnection();
         System.out.println("FTS HiveMQ Broker --> MongoDB Data Logger v1.0");
         System.out.println("Type \"help\" for command list");
         while(true)
@@ -48,12 +51,6 @@ public class FTS_Hive2Mongo_Datalogger
                 case "discbroker":  brokerConnection.disConnect();
                                     break;
 
-                case "recbroker":   reconnectBroker();
-                                    break;
-
-                case "recdb":       reconnectDB();
-                                    break;
-
                 case "check ":      checkConnection();
                                     break;
 
@@ -72,8 +69,6 @@ public class FTS_Hive2Mongo_Datalogger
         System.out.print("condb                 : Connect to database\n\n");
         System.out.print("conbroker             : Connect to broker\n\n");
         System.out.print("discbroker            : Disconnect broker\n\n");
-        System.out.print("recdb                 : Reconnect to database\n\n");
-        System.out.print("recbroker             : Reconnect to broker\n\n");
         System.out.print("sub                   : Subscribe a new topic\n\n");
         System.out.print("uns                   : Un-subscribe a subscribed topic\n\n");
         System.out.print("check                 : Check connection status\n\n");
@@ -94,8 +89,7 @@ public class FTS_Hive2Mongo_Datalogger
         System.out.println("clientID: ");
         clientID = terminalInput.nextLine();
 
-        brokerConnection = new HiveConnection(serverAdd, clientID, true);//session cleaning is true by default
-        brokerConnection.connect();
+        brokerConnection.connect(serverAdd, clientID, true);
     }
 
     public static void connectToDatabase()
@@ -113,8 +107,7 @@ public class FTS_Hive2Mongo_Datalogger
         System.out.println("password: ");
         password = terminalInput.nextLine();
 
-        dbConnection = new MongoConnection(serverAdd, userName, password, targetDB);
-        dbConnection.connect();
+        dbConnection.connect(serverAdd, userName, password, targetDB);
     }
 
     public static void showSubscriptions()
@@ -154,45 +147,6 @@ public class FTS_Hive2Mongo_Datalogger
         {
             subsTopics.remove(topic);
         }
-    }
-
-    public static void reconnectDB()
-    {
-        String userCmd;
-        Scanner terminalInput   = new Scanner(System.in);
-        if(!dbConnection.isDBConnected)
-        {
-            System.out.println("Please use \"condb\"");
-            return;
-        }
-        System.out.println("Change storage collection?");
-        userCmd = terminalInput.nextLine();
-        if(userCmd.equals("y") | userCmd.equals("Y"))
-        {
-            System.out.println("target collection: ");
-            targetCollectionName = terminalInput.nextLine();
-        }
-
-        dbConnection.connect();
-    }
-
-    public static void reconnectBroker()
-    {
-        String serverAdd, clientID;
-        if(!dbConnection.isDBConnected)
-        {
-            System.out.println("Database connection required");
-            return;
-        }
-        Scanner terminalInput   = new Scanner(System.in);
-        System.out.println("host: ");
-        serverAdd = terminalInput.nextLine();
-        System.out.println("clientID: ");
-        clientID = terminalInput.nextLine();
-        brokerConnection.setBrokerAddress(serverAdd);
-        brokerConnection.setClientId(clientID);
-        brokerConnection.connect();
-
     }
 
     public static void checkConnection()
