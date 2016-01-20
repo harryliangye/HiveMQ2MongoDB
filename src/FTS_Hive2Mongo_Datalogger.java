@@ -1,5 +1,6 @@
 /**
  * Created by yliang on 1/15/2016.
+ *
  */
 import java.util.*;
 public class FTS_Hive2Mongo_Datalogger
@@ -11,6 +12,8 @@ public class FTS_Hive2Mongo_Datalogger
     public static boolean dispIncomingMessages = true;
     public static boolean DBConnected     = false;
     public static boolean HiveConnected   = false;
+
+
     public static void main( String args[] )
     {
         String userCmd;
