@@ -68,6 +68,7 @@ public class FTS_Hive2Mongo_Datalogger
     }
     public static void helpInfo()
     {
+        System.out.print("v                     : Enable|Disable incoming message display\n\n");
         System.out.print("condb                 : Connect to database\n\n");
         System.out.print("conbroker             : Connect to broker\n\n");
         System.out.print("discbroker            : Disconnect broker\n\n");
@@ -202,12 +203,14 @@ public class FTS_Hive2Mongo_Datalogger
         {
             hiveConnection.setBroker(serverAdd);
             hiveConnection.setClientId(clientID);
+            hiveConnection.connect();
         }
         catch(Exception e)
         {
-            System.out.println(e);
+            System.out.println("Msg:" + e.getMessage());
+            System.out.println("Cause:" + e.getCause());
         }
-        hiveConnection.connect();
+
     }
 
     public static void connInfo()
