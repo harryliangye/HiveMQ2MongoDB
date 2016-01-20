@@ -7,7 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c7162b0-aef1-4aee-a197-5ab84c1b163f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FTS_Hive2Mongo_Datalogger.java" afterPath="$PROJECT_DIR$/src/FTS_Hive2Mongo_Datalogger.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HiveConnection.java" afterPath="$PROJECT_DIR$/src/HiveConnection.java" />
     </list>
     <ignored path="FTS_Hive2Mongo_Datalogger.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FTS_Hive2Mongo_Datalogger.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FTS_Hive2Mongo_Datalogger.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FTS_Hive2Mongo_Datalogger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="137" column="41" selection-start-line="137" selection-start-column="41" selection-end-line="137" selection-end-column="41" />
+            <state vertical-scroll-proportion="-0.15313935">
+              <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="method#checkConnection#0;class#FTS_Hive2Mongo_Datalogger#0" expanded="false" />
@@ -44,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HiveConnection.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HiveConnection.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HiveConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.96937215">
-              <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -110,8 +111,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/HiveCallback.java" />
         <option value="$PROJECT_DIR$/src/MongoConnection.java" />
-        <option value="$PROJECT_DIR$/src/FTS_Hive2Mongo_Datalogger.java" />
         <option value="$PROJECT_DIR$/src/HiveConnection.java" />
+        <option value="$PROJECT_DIR$/src/FTS_Hive2Mongo_Datalogger.java" />
       </list>
     </option>
   </component>
@@ -671,7 +672,7 @@
       <workItem from="1453149604556" duration="1960000" />
       <workItem from="1453155646793" duration="8097000" />
       <workItem from="1453229627192" duration="13834000" />
-      <workItem from="1453310455175" duration="17464000" />
+      <workItem from="1453310455175" duration="17731000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commission">
       <created>1453314278326</created>
@@ -683,7 +684,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70191000" />
+    <option name="totallyTimeSpent" value="70458000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -696,7 +697,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32987553" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -705,7 +706,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32987553" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26298702" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26298702" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18549223" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09914712" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1110,26 +1111,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FTS_Hive2Mongo_Datalogger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="137" column="41" selection-start-line="137" selection-start-column="41" selection-end-line="137" selection-end-column="41" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="method#checkConnection#0;class#FTS_Hive2Mongo_Datalogger#0" expanded="false" />
-            <element signature="method#dbInsertFromCallBack#0;class#FTS_Hive2Mongo_Datalogger#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/HiveConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.96937215">
-          <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#hiveExceptionHandling#0;class#HiveConnection#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FTS_Hive2Mongo_Datalogger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.15313935">
+          <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="method#checkConnection#0;class#FTS_Hive2Mongo_Datalogger#0" expanded="false" />
+            <element signature="method#dbInsertFromCallBack#0;class#FTS_Hive2Mongo_Datalogger#0" expanded="false" />
           </folding>
         </state>
       </provider>

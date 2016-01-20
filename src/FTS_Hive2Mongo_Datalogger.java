@@ -51,7 +51,7 @@ public class FTS_Hive2Mongo_Datalogger
                 case "discbroker":  brokerConnection.disConnect();
                                     break;
 
-                case "check ":      checkConnection();
+                case "check":      checkConnection();
                                     break;
 
                 case "exit":        System.out.println("Bye");
